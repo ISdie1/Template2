@@ -1,6 +1,6 @@
 /***********************************************************************************************************
 * 文件名  :led
-* 作者    ： iot
+* 作者    ： youkaiyan
 * 版本    ： 
 * 时间    ： 2020/10/20
 * 简要    ： led头文件
@@ -10,8 +10,11 @@
 *>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 #ifndef_LED_H
 #define_LED_H
-
-#include<iocc2530.h>
+#include'led.h'
+#include'key.h'
+#define KEY_PRESS   0
+#define KEY_RELEASE  1
+#define KEY_ERROR  255
 typedef enum enledNum
 {
    LED_ALL_E,

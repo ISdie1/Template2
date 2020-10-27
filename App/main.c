@@ -9,7 +9,11 @@
  *
  *>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 /* 头文件 ----------------------------------------------------------------*/
-#include<led.h>
+#include<iocc2530.h>
+#include'led.h'
+#include'key.h'
+unsigened int temp=0;
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * 函数名：mian
 * 参数：void
@@ -22,10 +26,33 @@ int main (void)
 
 {
   //led初始化
-  LedInit();   while(1)
-
-LedOn(LED_ALL_E);  delay(500);      //Led灯所有亮   
-Ledoff(LED_ALL_E);  delay(500);    //Led灯所有灭
-LedToggle(LED_ALL_E);   //Led时延函数
-
+  LedInit();
+  KeyInit();
+  Ledoff(LED_ALL_E);
+  while(1)
+  {
+    if(KEY_PRESS == KeyStateGet(KEY_KEY1_E))
+       {
+         //消除抖动
+         DelayMs(100);
+        if(KEY_PRESS == KeyStateGet(KEY_KEY1_E))
+           {
+              LedOn(LED_LED1_E);   //等待按键松开
+              
+              while{KEY_PRESS == KeyStateGet(KEY_KEY1_E));
+   }
 }
+  }
+ if(KEY_PRESS == KeyStateGet(KEY_KEY1_E))
+       {
+         //消除抖动
+         DelayMs(100);
+        if(KEY_PRESS == KeyStateGet(KEY_KEY2_E))
+           {
+              LedOn(LED_LED2_E);   //等待按键松开
+              
+              while{KEY_PRESS == KeyStateGet(KEY_KEY2_E));
+              }
+           }
+       }
+              
